@@ -43,11 +43,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // テキストエリアを追加
         alertController.addTextField(configurationHandler: nil)
         // OKボタンを追加
-        let okAction = UIAlertAction(title: "OK",style: UIAlertAction.Style.default){(action: UIAlertAction) in
+        let okAction = UIAlertAction(title: "OK",style: UIAlertAction.Style.default){ (action: UIAlertAction) in
             // OKボタンがタップされた時の処理
             if let textField = alertController.textFields?.first{
                 
-                // ToDoの配列に入力値を先頭に挿入。
+                // ToDoの配列に入力値を先頭に挿入
                 let myTodo = MyTodo()
                 myTodo.todoTitle = textField.text!
                 self.todoList.insert(myTodo, at: 0)
@@ -65,6 +65,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
         // OKボタンがタップされたときの処理
+        
+        alertController.addAction(okAction)
         let cancelButton = UIAlertAction.init(title: "CANCEL", style: UIAlertAction.Style.cancel, handler: nil)
         // CANCELボタンを追加
         alertController.addAction(cancelButton)
@@ -113,12 +115,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //データ保存。Data型にシリアライズする
         let data: Data = NSKeyedArchiver.archivedData(withRootObject: todoList)
         // UserDefaultsに保存
-        let userDefaults = UserDefaults.standar
+        let userDefaults = UserDefaults.standard
         userDefaults.set(data, forKey: "todoList")
         userDefaults.synchronize()
     }
+     //セルを削除した時の処理
+    func tableView(_ tableView: UITableView,commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath){
+        //削除可能かどうか
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            //ToDoリストから削除
+            todoList.remove(at: indexPath.row)
+            //セルを削除
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+            //データを保存。Data型にシリアライズする
+            let data: Data = NSKeyedArchiver.archivedData(withRootObject: todoList)
+            // UserDefaultsに保存
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(data, forKey: "todoList")
+            userDefaults.synchronize()
+            
+            
+        }
+    
 }
-
+}
 // 独自クラスwシリアライズする際には、NSObjectを継承し、NSCodingプロトコルに準拠する必要がある
 class MyTodo: NSObject,NSCoding {
     
