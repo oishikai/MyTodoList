@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //保存しているToDOの読み込み処理
         let userDefaults = UserDefaults.standard
         if let storedToDoList = userDefaults.object(forKey: "todoList") as? Data {
-            if let unarchiveTodoList = NSKeyedArchiver.unarchiveObject(
+            if let unarchiveTodoList = NSKeyedUnarchiver.unarchiveObject(
                 with: storedToDoList) as? [MyTodo] {
                 todoList.append(contentsOf: unarchiveTodoList)
             }
@@ -97,6 +97,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.accessoryType = UITableViewCell.AccessoryType.none
         }
         return cell
+    }
+    // セルをタップした時の処理
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let myTodo = todoList[indexPath.row]
+        if myTodo.todoDone{
+            //完了済みの場合は未完了に変更
+            myTodo.todoDone = false
+        }else{
+            // 未完了の場合は完了済みに変更
+            myTodo.todoDone = true
+        }
+        // セルの状態を変更
+        tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.fade)
+        //データ保存。Data型にシリアライズする
+        let data: Data = NSKeyedArchiver.archivedData(withRootObject: todoList)
+        // UserDefaultsに保存
+        let userDefaults = UserDefaults.standar
+        userDefaults.set(data, forKey: "todoList")
+        userDefaults.synchronize()
     }
 }
 
