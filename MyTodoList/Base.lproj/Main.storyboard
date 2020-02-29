@@ -42,10 +42,25 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="fv4-4t-MKz"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itp-MO-DR2">
+                                <rect key="frame" x="279" y="611" width="80" height="40"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="PjG-K9-ui0"/>
+                                    <constraint firstAttribute="height" constant="40" id="ggQ-P1-HUf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="完了済み"/>
+                                <connections>
+                                    <segue destination="WUf-fi-KT2" kind="show" id="IMH-QN-WxI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Itp-MO-DR2" secondAttribute="bottom" constant="16" id="4NL-6T-cyf"/>
                             <constraint firstItem="qZk-gH-sbi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8Tp-p6-7Ab"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Itp-MO-DR2" secondAttribute="trailing" constant="16" id="asC-bc-3aF"/>
                             <constraint firstItem="qZk-gH-sbi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="b0U-Sj-Sey"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qZk-gH-sbi" secondAttribute="bottom" id="hHX-W9-Yg2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qZk-gH-sbi" secondAttribute="trailing" id="y6o-Ur-Ep3"/>
@@ -65,7 +80,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="881" y="137"/>
+            <point key="canvasLocation" x="880.79999999999995" y="136.28185907046478"/>
+        </scene>
+        <!--Done View Controller-->
+        <scene sceneID="T6g-Gm-tUD">
+            <objects>
+                <viewController id="WUf-fi-KT2" customClass="DoneViewController" customModule="MyTodoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w3H-SB-Sqk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="43g-Dg-2gN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8eS-lC-QKK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lac-ru-SHF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="137"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mdu-vF-xdV">

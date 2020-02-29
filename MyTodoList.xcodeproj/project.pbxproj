@@ -13,6 +13,7 @@
 		2A899E112407C33C0079A33B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A899E0F2407C33C0079A33B /* Main.storyboard */; };
 		2A899E132407C33E0079A33B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A899E122407C33E0079A33B /* Assets.xcassets */; };
 		2A899E162407C33E0079A33B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A899E142407C33E0079A33B /* LaunchScreen.storyboard */; };
+		2A9BE769240A86B500E24AD0 /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9BE768240A86B500E24AD0 /* DoneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2A899E122407C33E0079A33B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A899E152407C33E0079A33B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A899E172407C33E0079A33B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A9BE768240A86B500E24AD0 /* DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				2A899E092407C33C0079A33B /* AppDelegate.swift */,
 				2A899E0B2407C33C0079A33B /* SceneDelegate.swift */,
 				2A899E0D2407C33C0079A33B /* ViewController.swift */,
+				2A9BE768240A86B500E24AD0 /* DoneViewController.swift */,
 				2A899E0F2407C33C0079A33B /* Main.storyboard */,
 				2A899E122407C33E0079A33B /* Assets.xcassets */,
 				2A899E142407C33E0079A33B /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9BE769240A86B500E24AD0 /* DoneViewController.swift in Sources */,
 				2A899E0E2407C33C0079A33B /* ViewController.swift in Sources */,
 				2A899E0A2407C33C0079A33B /* AppDelegate.swift in Sources */,
 				2A899E0C2407C33C0079A33B /* SceneDelegate.swift in Sources */,
