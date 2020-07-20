@@ -27,10 +27,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if let storedToDoList = userDefaults.object(forKey: "todoList") as? Data {
             if let unarchiveTodoList = NSKeyedUnarchiver.unarchiveObject(
                 with: storedToDoList) as? [MyTodo] {
-                todoList.append(contentsOf: unarchiveTodoList)
+                todoList.append(contentsOf: unarchiveTodoList.filter({!$0.todoDone}))
             }
+        }
     }
-    }
+    
     override func didReceiveMemoryWarning() {
         didReceiveMemoryWarning()
     }
